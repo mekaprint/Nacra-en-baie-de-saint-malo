@@ -3,8 +3,15 @@
 
   <url>
     <loc>https://nacra15fra008.netlify.app/</loc>
-    <lastmod>2026-01-07</lastmod>
-    <priority>1.0</priority>
+    <lastmod>2025-12-01</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- Blog externe — cela ne sera pas indexé ici mais Google peut suivre le lien -->
+  <url>
+    <loc>https://nacra15-fra008.blogspot.com/</loc>
+    <lastmod>2025-12-01</lastmod>
+    <priority>0.80</priority>
   </url>
 
 </urlset>
