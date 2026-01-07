@@ -87,6 +87,7 @@ h2 {
 video {
     width: 100%;
     border-radius: 15px;
+    margin-bottom: 50px;
 }
 
 .social {
@@ -104,34 +105,6 @@ footer {
     color: white;
     text-align: center;
     padding: 30px;
-}
-
-/* Slider vidéo */
-.video-slider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 50px;
-}
-
-.video-container {
-    max-width: 800px;
-    width: 100%;
-}
-
-.video-slider button {
-    background: #004e92;
-    color: white;
-    border: none;
-    padding: 15px 25px;
-    font-size: 1.5em;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.video-slider button:hover {
-    background: #0066cc;
 }
 </style>
 </head>
@@ -169,19 +142,13 @@ footer {
 </div>
 </section>
 
-<!-- Section Vidéo avec slider -->
+<!-- Section Vidéo de présentation -->
 <section>
-<h2>Vidéos</h2>
-<div class="video-slider">
-    <button class="prev">&lt;</button>
-    <div class="video-container">
-        <video id="videoPlayer" controls>
-            <source src="Video_nacra1.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la vidéo HTML5.
-        </video>
-    </div>
-    <button class="next">&gt;</button>
-</div>
+<h2>Vidéo de présentation</h2>
+<video controls>
+    <source src="Video_nacra1.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo HTML5.
+</video>
 </section>
 
 <!-- Section Blog -->
@@ -228,7 +195,6 @@ footer {
     </ul>
     <p>Via la <strong>SNBSM</strong>, avec possibilité de <strong>déduction fiscale</strong>.</p>
 </div>
-
 </section>
 
 <!-- Section Contact -->
@@ -249,33 +215,6 @@ footer {
 <p>© 2026 – Association Nacra en Baie de Saint-Malo</p>
 </footer>
 
-<script>
-const videos = [
-    "video_nacra1.mp4",
-    "video_nacra2.mp4",
-    "video_nacra3.mp4"
-];
-
-let currentIndex = 0;
-const videoPlayer = document.getElementById("videoPlayer");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
-
-function updateVideo() {
-    videoPlayer.src = videos[currentIndex];
-    videoPlayer.play();
-}
-
-prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + videos.length) % videos.length;
-    updateVideo();
-});
-
-nextBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % videos.length;
-    updateVideo();
-});
-</script>
-
 </body>
 </html>
+
