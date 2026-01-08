@@ -129,13 +129,13 @@ footer {
     <div class="card">
         <img src="Navigation.jpg" alt="Navigation Nacra">
         <h3>Navigation</h3>
-        <p>Navigation en baie de Saint-Malo sur catamarans Nacra, entraînements techniques et sorties sportives adaptées à tous niveaux.</p>
+        <p>Navigation en baie de Saint-Malo sur catamarans Nacra, entraînements techniques et sorties sportives.</p>
     </div>
 
     <div class="card">
         <img src="Bapteme.jpg" alt="Baptême Nacra 15">
-        <h3>Baptême Nacra 15</h3>
-        <p>Découverte du Nacra 15 lors de baptêmes encadrés. Une expérience unique pour ressentir la vitesse et la glisse en toute sécurité.</p>
+        <h3>Decouverte du Nacra 15</h3>
+        <p>Découverte du Nacra 15, une expérience unique pour ressentir la vitesse et la glisse en toute sécurité.</p>
     </div>
 
     <div class="card">
@@ -146,14 +146,74 @@ footer {
 </div>
 </section>
 
-<!-- Section Vidéo -->
+<!--Objectif sportif 2026-->
+    
 <section>
-<h2>Vidéo de présentation</h2>
-<video controls width="100%" height="auto">
-    <source src="Video nacra 15.mp4" type="video/mp4">
-    Votre navigateur ne supporte pas la vidéo HTML5.
-</video>
+<h2>Objectifs sportifs 2026</h2>
+<div class="grid">
+    <div class="card">
+        <img src=".jpg" alt="Navigation Nacra">
+        <p>La saison à venir est placée sous le signe de la progression et de la performance :</p>
+    <ul>
+        <li>Participer aux régates nationales</li>
+        <li>Gagner en régularité et en expérience</li>
+        <li>Valoriser l’association et ses partenaires</li>
+    </ul>
+</div>
+
+</div>
+ <div class="card">
+    <img src="Navigation.jpg" alt="Navigation Nacra">
+    <p>À moyen terme, le projet s’inscrit dans une dynamique internationale :</p>
+ <ul>
+    <li>Participation à des épreuves européennes</li>
+    <li>Découverte du niveau international</li>
+    <li>Acquisition d’expérience face aux meilleurs équipages</li>
+ </ul>
+</div>
 </section>
+
+<!-- Section Médias -->
+<section>
+<h2>Médias</h2>
+
+<div class="grid">
+
+    <!-- Sélection vidéos -->
+    <div class="card">
+        <h3>Vidéos</h3>
+
+        <select onchange="changeVideo(this.value)" style="width:100%; padding:10px; border-radius:8px;">
+            <option value="">Choisir une vidéo</option>
+            <option value=" / .mp4">Présentation Nacra 15</option>
+            <option value=" / .mp4">Navigation en baie</option>
+            <option value="Video nacra 15.mp4">Régate</option>
+        </select>
+
+        <video id="videoPlayer" controls style="margin-top:20px;">
+            <source src="" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo HTML5.
+        </video>
+    </div>
+
+    <!-- Sélection photos -->
+    <div class="card">
+        <h3>Photos</h3>
+
+        <select onchange="changeImage(this.value)" style="width:100%; padding:10px; border-radius:8px;">
+            <option value="">Choisir une photo</option>
+            <option value="photo1.jpg">Navigation</option>
+            <option value="photo2.jpg">Baptême</option>
+            <option value="photo3.jpg">Régate</option>
+        </select>
+
+        <img id="photoViewer" src="" alt="Photo Nacra"
+             style="margin-top:20px; width:100%; height:250px; object-fit:cover; border-radius:12px;">
+    </div>
+
+</div>
+</section>
+
 
 
 
@@ -222,6 +282,22 @@ footer {
 <footer>
 <p>© 2026 – Association Nacra en Baie de Saint-Malo</p>
 </footer>
+
+    <script>
+function changeVideo(src) {
+    const video = document.getElementById("videoPlayer");
+    if (src) {
+        video.src = src;
+        video.load();
+        video.play();
+    }
+}
+
+function changeImage(src) {
+    const img = document.getElementById("photoViewer");
+    img.src = src;
+}
+</script>
 
 </body>
 </html>
