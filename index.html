@@ -2,10 +2,9 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Association Nacra en Baie de Saint-Malo</title>
+<title>Association Nacra – Baie de Saint-Malo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Search Console verification -->
 <meta name="google-site-verification" content="kiSUriSIFXnzZ91OE_cFO2Ka2ox9TFU1wszIvPLE9Lo" />
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -20,7 +19,7 @@ body {
 
 header {
     height: 70vh;
-    background: url("partenaire/NBSM.jpg") center/cover no-repeat;
+    background: url("photo/photo1.jpg") center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,11 +29,11 @@ header {
 }
 
 header img {
-    width: 300px;   /* logo agrandi */
-    margin-bottom: 20px;
+    width: 280px;
     background: rgba(255,255,255,0.9);
     padding: 10px;
     border-radius: 50%;
+    margin-bottom: 20px;
 }
 
 header h1 {
@@ -66,34 +65,54 @@ h2 {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
 }
 
 .card img {
     width: 100%;
-    height: 200px;      /* toutes les images activités ont même hauteur */
+    height: 200px;
     object-fit: cover;
     border-radius: 12px;
 }
 
-.partner-logo {
-    max-width: 150px;   /* tous les logos partenaires même taille */
-    height: auto;
-    display: block;
-    margin: auto;
-}
+/* ===== CARROUSEL ===== */
 
-.card h3 {
-    color: #004e92;
-    margin-top: 15px;
-    text-align: center;
-}
-
-video {
-    width: 100%;
+.carousel {
+    position: relative;
+    overflow: hidden;
     border-radius: 15px;
+}
+
+.carousel-content {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.carousel video,
+.carousel img {
+    width: 100%;
+    flex-shrink: 0;
+    border-radius: 15px;
+}
+
+.carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,78,146,0.85);
+    color: white;
+    border: none;
+    font-size: 2em;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.carousel .prev { left: 10px; }
+.carousel .next { right: 10px; }
+
+.carousel button:hover {
+    background: #004e92;
 }
 
 .social {
@@ -118,186 +137,164 @@ footer {
 <body>
 
 <header>
-    <img src="partenaire/NBSM.png" alt="Logo Association Nacra">
-    <h1>Association Nacra<br>en<br>Baie de Saint-Malo</h1>
+    <img src="partenaire/NBSM.png" alt="Logo Nacra">
+    <h1>Association Nacra<br>Baie de Saint-Malo</h1>
 </header>
 
-<!-- Section Activités -->
+<!-- ACTIVITÉS -->
 <section>
 <h2>Activités de l’association</h2>
 <div class="grid">
     <div class="card">
-        <img src="photo/Navigation.jpg" alt="Navigation Nacra">
+        <img src="photo/Navigation.jpg">
         <h3>Navigation</h3>
-        <p>Navigation en baie de Saint-Malo sur catamarans Nacra, entraînements techniques et sorties sportives.</p>
+        <p>Entraînements et navigation en baie de Saint-Malo sur Nacra 15.</p>
     </div>
-
     <div class="card">
-        <img src="photo/Bapteme.jpg" alt="Baptême Nacra 15">
-        <h3>Decouverte du Nacra 15</h3>
-        <p>Découverte du Nacra 15, une expérience unique pour ressentir la vitesse et la glisse en toute sécurité.</p>
+        <img src="photo/Bapteme.jpg">
+        <h3>Découverte</h3>
+        <p>Baptêmes et découverte du catamaran en toute sécurité.</p>
     </div>
-
     <div class="card">
-        <img src="photo/IMG-20250818-WA0008.jpg" alt="Présentation du projet">
-        <h3>Présentation du projet</h3>
-        <p>Présentation du projet sportif, des objectifs saison 2026 et des opportunités de partenariat.</p>
+        <img src="photo/photo2.jpg">
+        <h3>Projet sportif</h3>
+        <p>Objectifs sportifs 2026 et développement du projet.</p>
     </div>
 </div>
 </section>
 
-<!--Objectif sportif 2026-->
-    
+<!-- OBJECTIFS -->
 <section>
 <h2>Objectifs sportifs 2026</h2>
 <div class="grid">
     <div class="card">
-        <img src="photo/Presentation.jpg" alt="Navigation Nacra">
-        <p>La saison à venir est placée sous le signe de la progression et de la performance :</p>
-    <ul>
-        <li>Participer aux régates nationales</li>
-        <li>Gagner en régularité et en expérience</li>
-        <li>Valoriser l’association et ses partenaires</li>
-    </ul>
-</div>
-
-</div>
- <div class="card">
-    <img src="photo/IMG_20250819_211800.jpg" alt="Navigation Nacra">
-    <p>À moyen terme, le projet s’inscrit dans une dynamique internationale :</p>
- <ul>
-    <li>Participation à des épreuves européennes</li>
-    <li>Découverte du niveau international</li>
-    <li>Acquisition d’expérience face aux meilleurs équipages</li>
- </ul>
+        <h3>Championnat de France Espoir</h3>
+        <p>Qualification et participation au Championnat de France Espoir Nacra 15.</p>
+    </div>
+    <div class="card">
+        <h3>Objectifs nationaux</h3>
+        <p>Progression technique, régularité et visibilité de l’association.</p>
+    </div>
+    <div class="card">
+        <h3>Europe & Monde</h3>
+        <p>Découverte du circuit international et compétitions européennes.</p>
+    </div>
 </div>
 </section>
 
-<!-- Section Médias -->
+<!-- VIDÉOS -->
 <section>
-<h2>Médias</h2>
-
-<div class="grid">
-
-    <!-- Sélection vidéos -->
-    <div class="card">
-        <h3>Vidéos</h3>
-
-        <select onchange="changeVideo(this.value)" style="width:100%; padding:10px; border-radius:8px;">
-            <option value="">Choisir une vidéo</option>
-            <option value=" / .mp4">Présentation Nacra 15</option>
-            <option value=" / .mp4">Navigation en baie</option>
-            <option value=" / .mp4">Régate</option>
-        </select>
-
-        <video id="videoPlayer" controls style="margin-top:20px;">
-            <source src="" type="video/mp4">
-            Votre navigateur ne supporte pas la vidéo HTML5.
-        </video>
+<h2>Vidéos</h2>
+<div class="carousel" id="videoCarousel">
+    <div class="carousel-content">
+        <video src="video/video1.mp4" controls></video>
+        <video src="video/video2.mp4" controls></video>
+        <video src="video/video3.mp4" controls></video>
     </div>
-
-    <!-- Sélection photos -->
-    <div class="card">
-        <h3>Photos</h3>
-
-        <select onchange="changeImage(this.value)" style="width:100%; padding:10px; border-radius:8px;">
-            <option value="">Choisir une photo</option>
-            <option value="photo1.jpg">Navigation</option>
-            <option value="photo2.jpg">Baptême</option>
-            <option value="photo3.jpg">Régate</option>
-        </select>
-
-        <img id="photoViewer" src="" alt="Photo Nacra"
-             style="margin-top:20px; width:100%; height:250px; object-fit:cover; border-radius:12px;">
-    </div>
-
+    <button class="prev">‹</button>
+    <button class="next">›</button>
 </div>
 </section>
 
+<!-- PHOTOS -->
+<section>
+<h2>Photos</h2>
+<div class="carousel" id="photoCarousel">
+    <div class="carousel-content">
+        <img src="photo/photo1.jpg">
+        <img src="photo/photo2.jpg">
+        <img src="photo/photo3.jpg">
+    </div>
+    <button class="prev">‹</button>
+    <button class="next">›</button>
+</div>
+</section>
 
-
-
-<!-- Section Blog -->
+<!-- BLOG -->
 <section>
 <h2>Blog & Régates</h2>
 <div class="card">
-    <p>Photos, vidéos et récits des régates tout au long de la saison.</p>
+    <p>Suivez les régates et la saison sportive.</p>
     <a href="https://nacra15-fra008.blogspot.com/" target="_blank"
-       style="display:inline-block;background:#004e92;color:white;padding:15px 30px;border-radius:12px;text-decoration:none;font-weight:bold;">
+       style="background:#004e92;color:white;padding:15px 30px;border-radius:12px;text-decoration:none;font-weight:bold;">
         Voir le blog
     </a>
 </div>
 </section>
 
-<!-- Section Zone de navigation -->
+<!-- CARTE -->
 <section>
 <h2>Zone de navigation</h2>
 <iframe src="https://www.google.com/maps?q=Saint-Malo&output=embed"
-        width="100%" height="350" style="border-radius:15px;border:0;"></iframe>
+        width="100%" height="350" style="border:0;border-radius:15px;"></iframe>
 </section>
 
-<!-- Section Dons -->
+<!-- DON -->
 <section>
 <h2>Faire un don</h2>
 <div class="card">
     <p>Soutenez l’association via HelloAsso.</p>
     <a href="https://www.helloasso.com/associations/nacra-en-baie-de-saint-malo"
        target="_blank"
-       style="display:inline-block;background:#FF6A00;color:white;padding:15px 30px;border-radius:12px;text-decoration:none;font-weight:bold;">
+       style="background:#FF6A00;color:white;padding:15px 30px;border-radius:12px;text-decoration:none;font-weight:bold;">
         Faire un don
     </a>
 </div>
 </section>
 
-<!-- Section Partenariats -->
-<section>
-<h2>Partenariats</h2>
-
-<div class="card">
-    <p>Association loi 1901, nous recherchons :</p>
-    <ul>
-        <li>💰 Partenariats financiers</li>
-        <li>🚚 Soutien logistique</li>
-        <li>⛵ Partenariats matériel</li>
-    </ul>
-    <p>Via la <strong>SNBSM</strong>, avec possibilité de <strong>déduction fiscale</strong>.</p>
-</div>
-
-</section>
-
-<!-- Section Contact -->
+<!-- CONTACT -->
 <section>
 <h2>Contact</h2>
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe9UHiA8uA0OTOPDDsn4n9jyHEsHxAtnniwyakwP18JTUMleg/viewform?embedded=true"
-        width="100%" height="900" frameborder="0">
-</iframe>
+        width="100%" height="900" style="border:0;"></iframe>
 </section>
 
-<!-- Réseaux sociaux -->
 <section class="social">
 <a href="https://www.instagram.com/nacra15_fra008" target="_blank"><i class="fab fa-instagram"></i></a>
 <a href="https://www.tiktok.com/@nacra15_fra008" target="_blank"><i class="fab fa-tiktok"></i></a>
 </section>
 
 <footer>
-<p>© 2026 – Association Nacra en Baie de Saint-Malo</p>
+© 2026 – Association Nacra en Baie de Saint-Malo
 </footer>
 
-    <script>
-function changeVideo(src) {
-    const video = document.getElementById("videoPlayer");
-    if (src) {
-        video.src = src;
-        video.load();
-        video.play();
+<script>
+function initCarousel(id) {
+    const carousel = document.getElementById(id);
+    const content = carousel.querySelector(".carousel-content");
+    const items = content.children;
+    let index = 0;
+
+    const prev = carousel.querySelector(".prev");
+    const next = carousel.querySelector(".next");
+
+    function update() {
+        content.style.transform = `translateX(-${index * 100}%)`;
     }
+
+    prev.onclick = () => {
+        index = (index - 1 + items.length) % items.length;
+        update();
+    };
+
+    next.onclick = () => {
+        index = (index + 1) % items.length;
+        update();
+    };
+
+    let startX = 0;
+    carousel.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+    carousel.addEventListener("touchend", e => {
+        let endX = e.changedTouches[0].clientX;
+        if (startX - endX > 50) next.onclick();
+        if (endX - startX > 50) prev.onclick();
+    });
 }
 
-function changeImage(src) {
-    const img = document.getElementById("photoViewer");
-    img.src = src;
-}
+initCarousel("videoCarousel");
+initCarousel("photoCarousel");
 </script>
 
 </body>
 </html>
+
