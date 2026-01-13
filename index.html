@@ -17,6 +17,7 @@ body {
     color: #222;
 }
 
+/* HEADER */
 header {
     height: 70vh;
     background: url("photo/photo1.jpg") center/cover no-repeat;
@@ -42,6 +43,7 @@ header h1 {
     border-radius: 15px;
 }
 
+/* SECTIONS */
 section {
     max-width: 1100px;
     margin: auto;
@@ -54,6 +56,7 @@ h2 {
     padding-left: 15px;
 }
 
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -75,8 +78,7 @@ h2 {
     border-radius: 12px;
 }
 
-/* ===== CARROUSEL ===== */
-
+/* CARROUSEL */
 .carousel {
     position: relative;
     overflow: hidden;
@@ -88,9 +90,11 @@ h2 {
     transition: transform 0.4s ease;
 }
 
-.carousel video,
-.carousel img {
+.carousel img,
+.carousel video {
     width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
     flex-shrink: 0;
     border-radius: 15px;
 }
@@ -111,10 +115,7 @@ h2 {
 .carousel .prev { left: 10px; }
 .carousel .next { right: 10px; }
 
-.carousel button:hover {
-    background: #004e92;
-}
-
+/* SOCIAL */
 .social {
     text-align: center;
     font-size: 2.2em;
@@ -125,6 +126,7 @@ h2 {
     color: #004e92;
 }
 
+/* FOOTER */
 footer {
     background: #000428;
     color: white;
@@ -138,27 +140,27 @@ footer {
 
 <header>
     <img src="partenaire/NBSM.png" alt="Logo Nacra">
-    <h1>Association Nacra<br>Baie de Saint-Malo</h1>
+    <h1>Association Nacra<br>en<br>Baie de Saint-Malo</h1>
 </header>
 
 <!-- ACTIVITÉS -->
 <section>
-<h2>Activités de l’association</h2>
+<h2>Activités</h2>
 <div class="grid">
     <div class="card">
         <img src="photo/Navigation.jpg">
         <h3>Navigation</h3>
-        <p>Entraînements et navigation en baie de Saint-Malo sur Nacra 15.</p>
+        <p>Entraînements et navigation sportive en baie de Saint-Malo.</p>
     </div>
     <div class="card">
         <img src="photo/Bapteme.jpg">
         <h3>Découverte</h3>
-        <p>NNavigation dans la baie de Saint Malo pour découvrir le littoral.</p>
+        <p>Découverte du Nacra 15 et du littoral malouin.</p>
     </div>
     <div class="card">
         <img src="photo/Presentation.jpg">
         <h3>Projet sportif</h3>
-        <p>Objectifs sportifs 2026 et développement du projet.</p>
+        <p>Objectifs sportifs et développement 2026.</p>
     </div>
 </div>
 </section>
@@ -169,55 +171,52 @@ footer {
 <div class="grid">
     <div class="card">
         <h3>Championnat de France Espoir</h3>
-        <p>Qualification et participation au Championnat de France Espoir Nacra 15.</p>
+        <p>Qualification et participation au championnat national.</p>
     </div>
     <div class="card">
         <h3>Objectifs nationaux</h3>
-        <p>Progression technique, régularité et visibilité de l’association.</p>
+        <p>Progression technique et régularité en régate.</p>
     </div>
     <div class="card">
         <h3>Europe & Monde</h3>
-        <p>Découverte du circuit international et compétitions européennes.</p>
+        <p>Découverte du circuit international.</p>
     </div>
 </div>
 </section>
 
-<!-- VIDÉOS -->
+<!-- VIDEOS -->
 <section>
 <h2>Vidéos</h2>
 <div class="carousel" id="videoCarousel">
     <div class="carousel-content">
-        <video src="nacra152.1.mp4" controls></video>
-        <video src="video/video2.mp4" controls></video>
-        <video src="video/video3.mp4" controls></video>
+        <video src="video/video1.mp4" muted></video>
+        <video src="video/video2.mp4" muted></video>
+        <video src="video/video3.mp4" muted></video>
     </div>
     <button class="prev">‹</button>
     <button class="next">›</button>
 </div>
 </section>
 
-<!-- PHOTOS -->
 <!-- PHOTOS -->
 <section>
 <h2>Photos</h2>
 <div class="carousel" id="photoCarousel">
     <div class="carousel-content">
-        <img src="photo/nacra151.0.jpg" alt="Photo 1" width="300" height="800">
-        <img src="photo/nacra151.1.jpg" alt="Photo 2" width="300" height="800">
-        <img src="photo/nacra151.2.jpg" alt="Photo 3" width="300" height="800">
-        <img src="photo/nacra151.3.jpg" alt="Photo 4" width="300" height="800">
+        <img src="photo/nacra151.0.jpg">
+        <img src="photo/nacra151.1.jpg">
+        <img src="photo/nacra151.2.jpg">
+        <img src="photo/nacra151.3.jpg">
     </div>
     <button class="prev">‹</button>
     <button class="next">›</button>
 </div>
 </section>
 
-
 <!-- BLOG -->
 <section>
 <h2>Blog & Régates</h2>
 <div class="card">
-    <p>Suivez les régates et la saison sportive.</p>
     <a href="https://nacra15-fra008.blogspot.com/" target="_blank"
        style="background:#004e92;color:white;padding:15px 30px;border-radius:12px;text-decoration:none;font-weight:bold;">
         Voir le blog
@@ -236,7 +235,6 @@ footer {
 <section>
 <h2>Faire un don</h2>
 <div class="card">
-    <p>Soutenez l’association via HelloAsso.</p>
     <a href="https://www.helloasso.com/associations/nacra-en-baie-de-saint-malo"
        target="_blank"
        style="background:#FF6A00;color:white;padding:15px 30px;border-radius:12px;text-decoration:none;font-weight:bold;">
@@ -255,51 +253,87 @@ footer {
 <section class="social">
 <a href="https://www.instagram.com/nacra15_fra008" target="_blank"><i class="fab fa-instagram"></i></a>
 <a href="https://www.tiktok.com/@nacra15_fra008" target="_blank"><i class="fab fa-tiktok"></i></a>
-<a href="https://www.youtube.com/@Nacra15FRA008" target="_blank"><i class="fab fa-youtub"></i></a>
-</section>
 </section>
 
 <footer>
-© 2025 – Association Nacra en Baie de Saint-Malo
+© 2026 – Association Nacra en Baie de Saint-Malo
 </footer>
 
 <script>
-function initCarousel(id) {
+/* ===== VIDEO CAROUSEL ===== */
+function initVideoCarousel(id) {
     const carousel = document.getElementById(id);
     const content = carousel.querySelector(".carousel-content");
-    const items = content.children;
+    const videos = content.querySelectorAll("video");
     let index = 0;
 
-    const prev = carousel.querySelector(".prev");
-    const next = carousel.querySelector(".next");
+    function show(i) {
+        content.style.transform = `translateX(-${i * 100}%)`;
+        videos.forEach(v => v.pause());
+        videos[i].play();
+    }
 
-    function update() {
+    videos.forEach((video, i) => {
+        video.addEventListener("ended", () => {
+            index = (index + 1) % videos.length;
+            show(index);
+        });
+    });
+
+    carousel.querySelector(".prev").onclick = () => {
+        index = (index - 1 + videos.length) % videos.length;
+        show(index);
+    };
+
+    carousel.querySelector(".next").onclick = () => {
+        index = (index + 1) % videos.length;
+        show(index);
+    };
+
+    show(0);
+}
+
+/* ===== PHOTO CAROUSEL ===== */
+let photoInterval;
+function initPhotoCarousel(id, delay = 3000) {
+    const carousel = document.getElementById(id);
+    const content = carousel.querySelector(".carousel-content");
+    const images = content.children;
+    let index = 0;
+
+    function show() {
         content.style.transform = `translateX(-${index * 100}%)`;
     }
 
-    prev.onclick = () => {
-        index = (index - 1 + items.length) % items.length;
-        update();
+    function next() {
+        index = (index + 1) % images.length;
+        show();
+    }
+
+    photoInterval = setInterval(next, delay);
+
+    carousel.querySelector(".prev").onclick = () => {
+        index = (index - 1 + images.length) % images.length;
+        show();
     };
 
-    next.onclick = () => {
-        index = (index + 1) % items.length;
-        update();
-    };
-
-    let startX = 0;
-    carousel.addEventListener("touchstart", e => startX = e.touches[0].clientX);
-    carousel.addEventListener("touchend", e => {
-        let endX = e.changedTouches[0].clientX;
-        if (startX - endX > 50) next.onclick();
-        if (endX - startX > 50) prev.onclick();
-    });
+    carousel.querySelector(".next").onclick = next;
 }
 
-initCarousel("videoCarousel");
-initCarousel("photoCarousel");
+/* PAUSE ONGLET INACTIF */
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+        document.querySelectorAll("video").forEach(v => v.pause());
+        clearInterval(photoInterval);
+    } else {
+        document.querySelectorAll("video")[0]?.play();
+        initPhotoCarousel("photoCarousel");
+    }
+});
+
+initVideoCarousel("videoCarousel");
+initPhotoCarousel("photoCarousel");
 </script>
 
 </body>
 </html>
-
