@@ -2,148 +2,25 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Association Nacra – Baie de Saint-Malo</title>
+<title>Accueil – Association Nacra</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="google-site-verification" content="kiSUriSIFXnzZ91OE_cFO2Ka2ox9TFU1wszIvPLE9Lo" />
-
+<link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6f8;
-    color: #222;
-}
-
-/* HEADER */
-header {
-    height: 70vh;
-    background: url("photo/photo1.jpg") center/cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-}
-
-header img {
-    width: 280px;
-    background: rgba(255,255,255,0.9);
-    padding: 10px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-header h1 {
-    background: rgba(0,0,0,0.6);
-    padding: 20px 30px;
-    border-radius: 15px;
-}
-
-/* SECTIONS */
-section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 50px 20px;
-}
-
-h2 {
-    color: #004e92;
-    border-left: 5px solid #004e92;
-    padding-left: 15px;
-}
-
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-/* CARROUSEL */
-.carousel {
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-}
-
-.carousel-content {
-    display: flex;
-    transition: transform 0.4s ease;
-}
-
-.carousel img,
-.carousel video {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    flex-shrink: 0;
-    border-radius: 15px;
-}
-
-.carousel button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,78,146,0.85);
-    color: white;
-    border: none;
-    font-size: 2em;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 10px;
-}
-
-.carousel .prev { left: 10px; }
-.carousel .next { right: 10px; }
-
-/* SOCIAL */
-.social {
-    text-align: center;
-    font-size: 2.2em;
-}
-
-.social a {
-    margin: 0 15px;
-    color: #004e92;
-}
-
-/* FOOTER */
-footer {
-    background: #000428;
-    color: white;
-    text-align: center;
-    padding: 30px;
-}
-</style>
 </head>
-
 <body>
+
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="blog.html">Blog</a>
+    <a href="navigation.html">Où nous trouver</a>
+    <a href="contact.html">Nous contacter</a>
+</nav>
 
 <header>
     <img src="partenaire/NBSM.png" alt="Logo Nacra">
-    <h1>Association Nacra<br>en<br>Baie de Saint-Malo</h1>
+    <h1>Association Nacra<br>en Baie de Saint-Malo</h1>
 </header>
 
-<!-- ACTIVITÉS -->
 <section>
 <h2>Activités</h2>
 <div class="grid">
@@ -165,7 +42,6 @@ footer {
 </div>
 </section>
 
-<!-- OBJECTIFS -->
 <section>
 <h2>Objectifs sportifs 2026</h2>
 <div class="grid">
@@ -184,156 +60,14 @@ footer {
 </div>
 </section>
 
-<!-- VIDEOS -->
-<section>
-<h2>Vidéos</h2>
-<div class="carousel" id="videoCarousel">
-    <div class="carousel-content">
-        <video src="video/video1.mp4" muted></video>
-        <video src="video/video2.mp4" muted></video>
-        <video src="video/video3.mp4" muted></video>
-    </div>
-    <button class="prev">‹</button>
-    <button class="next">›</button>
-</div>
-</section>
-
-<!-- PHOTOS -->
-<section>
-<h2>Photos</h2>
-<div class="carousel" id="photoCarousel">
-    <div class="carousel-content">
-        <img src="photo/nacra151.0.jpg">
-        <img src="photo/nacra151.1.jpg">
-        <img src="photo/nacra151.2.jpg">
-        <img src="photo/nacra151.3.jpg">
-    </div>
-    <button class="prev">‹</button>
-    <button class="next">›</button>
-</div>
-</section>
-
-<!-- BLOG -->
-<section>
-<h2>Blog & Régates</h2>
-<div class="card">
-    <a href="https://nacra15-fra008.blogspot.com/" target="_blank"
-       style="background:#004e92;color:white;padding:15px 30px;border-radius:12px;text-decoration:none;font-weight:bold;">
-        Voir le blog
-    </a>
-</div>
-</section>
-
-<!-- CARTE -->
-<section>
-<h2>Zone de navigation</h2>
-<iframe src="https://www.google.com/maps?q=Saint-Malo&output=embed"
-        width="100%" height="350" style="border:0;border-radius:15px;"></iframe>
-</section>
-
-<!-- DON -->
-<section>
-<h2>Faire un don</h2>
-<div class="card">
-    <a href="https://www.helloasso.com/associations/nacra-en-baie-de-saint-malo"
-       target="_blank"
-       style="background:#FF6A00;color:white;padding:15px 30px;border-radius:12px;text-decoration:none;font-weight:bold;">
-        Faire un don
-    </a>
-</div>
-</section>
-
-<!-- CONTACT -->
-<section>
-<h2>Contact</h2>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe9UHiA8uA0OTOPDDsn4n9jyHEsHxAtnniwyakwP18JTUMleg/viewform?embedded=true"
-        width="100%" height="900" style="border:0;"></iframe>
-</section>
-
-<section class="social">
-<a href="https://www.instagram.com/nacra15_fra008" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://www.tiktok.com/@nacra15_fra008" target="_blank"><i class="fab fa-tiktok"></i></a>
-</section>
-
 <footer>
-© 2026 – Association Nacra en Baie de Saint-Malo
+    <div class="social">
+        <a href="https://www.instagram.com/nacra15_fra008" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@nacra15_fra008" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.youtube.com/@Nacra15FRA008" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="mailto:nbsm@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>© 2026 – Association Nacra en Baie de Saint-Malo</p>
 </footer>
-
-<script>
-/* ===== VIDEO CAROUSEL ===== */
-function initVideoCarousel(id) {
-    const carousel = document.getElementById(id);
-    const content = carousel.querySelector(".carousel-content");
-    const videos = content.querySelectorAll("video");
-    let index = 0;
-
-    function show(i) {
-        content.style.transform = `translateX(-${i * 100}%)`;
-        videos.forEach(v => v.pause());
-        videos[i].play();
-    }
-
-    videos.forEach((video, i) => {
-        video.addEventListener("ended", () => {
-            index = (index + 1) % videos.length;
-            show(index);
-        });
-    });
-
-    carousel.querySelector(".prev").onclick = () => {
-        index = (index - 1 + videos.length) % videos.length;
-        show(index);
-    };
-
-    carousel.querySelector(".next").onclick = () => {
-        index = (index + 1) % videos.length;
-        show(index);
-    };
-
-    show(0);
-}
-
-/* ===== PHOTO CAROUSEL ===== */
-let photoInterval;
-function initPhotoCarousel(id, delay = 3000) {
-    const carousel = document.getElementById(id);
-    const content = carousel.querySelector(".carousel-content");
-    const images = content.children;
-    let index = 0;
-
-    function show() {
-        content.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    function next() {
-        index = (index + 1) % images.length;
-        show();
-    }
-
-    photoInterval = setInterval(next, delay);
-
-    carousel.querySelector(".prev").onclick = () => {
-        index = (index - 1 + images.length) % images.length;
-        show();
-    };
-
-    carousel.querySelector(".next").onclick = next;
-}
-
-/* PAUSE ONGLET INACTIF */
-document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-        document.querySelectorAll("video").forEach(v => v.pause());
-        clearInterval(photoInterval);
-    } else {
-        document.querySelectorAll("video")[0]?.play();
-        initPhotoCarousel("photoCarousel");
-    }
-});
-
-initVideoCarousel("videoCarousel");
-initPhotoCarousel("photoCarousel");
-</script>
-
 </body>
 </html>
