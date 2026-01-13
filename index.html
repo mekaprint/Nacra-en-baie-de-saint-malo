@@ -194,7 +194,7 @@ footer {
 <h2>Objectifs sportifs 2026</h2>
 <div class="grid">
     <div class="card">
-        <h3>Championnat de France Espoir</h3>
+        <h3>Championnat de France Espoirs</h3>
         <p>Qualification et participation au championnat national.</p>
     </div>
     <div class="card">
@@ -236,6 +236,52 @@ footer {
     <button class="next">›</button>
 </div>
 </section>
+
+<!-- PRESSE -->
+<section>
+<h2>Ils parlent de nous</h2>
+
+<div class="grid press-grid">
+
+    <div class="card press-card">
+        <img src="presse/ouest-france.jpg" alt="Ouest-France">
+        <h3>Ouest-France</h3>
+        <p>
+            De jeunes navigateurs malouins visent le championnat de France
+            en Nacra 15.
+        </p>
+        <a href="https://www.ouest-france.fr/" target="_blank" class="press-link">
+            Lire l’article →
+        </a>
+    </div>
+
+    <div class="card press-card">
+        <img src="presse/telegramme.jpg" alt="Le Télégramme">
+        <h3>Le Télégramme</h3>
+        <p>
+            Un projet sportif ambitieux porté par l’Association Nacra
+            en Baie de Saint-Malo.
+        </p>
+        <a href="https://www.letelegramme.fr/" target="_blank" class="press-link">
+            Lire l’article →
+        </a>
+    </div>
+
+    <div class="card press-card">
+        <img src="presse/villedesaintmalo.png" alt="Ville de Saint-Malo">
+        <h3>Ville de Saint-Malo</h3>
+        <p>
+            La voile sportive mise à l’honneur avec un projet local
+            tourné vers l’avenir.
+        </p>
+        <a href="https://www.saint-malo.fr/" target="_blank" class="press-link">
+            Voir la publication →
+        </a>
+    </div>
+
+</div>
+</section>
+
 
 <!-- PARTENAIRES -->
 <section>
@@ -284,13 +330,17 @@ footer {
 <!-- RÉSEAUX -->
 <section class="social">
 <a href="https://www.instagram.com/nacra15_fra008" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/nacra15_fra008" target="_blank"><i class="fab fa-facebook"></i></a>
+<a href="https://www.linkedin.com/nacra15_fra008" target="_blank"><i class="fab fa-linkedin"></i></a>
 <a href="https://www.tiktok.com/@nacra15_fra008" target="_blank"><i class="fab fa-tiktok"></i></a>
 <a href="https://www.youtube.com/@Nacra15FRA008" target="_blank"><i class="fab fa-youtube"></i></a>
-<a href="mailto:nacra15.fra008@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="mailto:nbsm@gmail.com"><i class="fas fa-envelope"></i></a>
+</section>
+
 </section>
 
 <footer>
-© 2026 – Association Nacra en Baie de Saint-Malo
+© 2025 – Association Nacra en Baie de Saint-Malo
 </footer>
 
 <script>
@@ -335,6 +385,41 @@ function initPhotoCarousel(id, delay = 3000) {
 
 initVideoCarousel("videoCarousel");
 initPhotoCarousel("photoCarousel");
+
+/* PRESSE */
+.press-card img {
+    height: 90px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.press-card h3 {
+    margin: 10px 0 5px 0;
+    color: #004e92;
+}
+
+.press-card p {
+    font-size: 0.95em;
+}
+
+.press-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: white;
+    background: #004e92;
+    padding: 10px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.press-link:hover {
+    background: #FF6A00;
+    transform: translateY(-2px);
+}
+
+
 </script>
 
 </body>
