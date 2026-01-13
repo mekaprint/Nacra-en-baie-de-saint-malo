@@ -2,25 +2,172 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Accueil – Association Nacra</title>
+<title>Association Nacra – Baie de Saint-Malo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
 
-<nav>
-    <a href="index.html">Accueil</a>
-    <a href="blog.html">Blog</a>
-    <a href="navigation.html">Où nous trouver</a>
-    <a href="contact.html">Nous contacter</a>
-</nav>
+<meta name="google-site-verification" content="kiSUriSIFXnzZ91OE_cFO2Ka2ox9TFU1wszIvPLE9Lo" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+/* HEADER */
+header {
+    height: 70vh;
+    background: url("photo/photo1.jpg") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+header img {
+    width: 260px;
+    background: rgba(255,255,255,0.9);
+    padding: 10px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    background: rgba(0,0,0,0.6);
+    padding: 20px 30px;
+    border-radius: 15px;
+}
+
+/* SECTIONS */
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+h2 {
+    color: #004e92;
+    border-left: 5px solid #004e92;
+    padding-left: 15px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* CAROUSEL */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.carousel-content {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.carousel img,
+.carousel video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* BOUTONS CAROUSEL */
+.carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,78,146,0.85);
+    color: white;
+    border: none;
+    font-size: 2em;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.carousel .prev { left: 10px; }
+.carousel .next { right: 10px; }
+
+/* PARTENAIRES */
+.partners {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+
+.partners img {
+    max-height: 70px;
+    max-width: 140px;
+    object-fit: contain;
+    opacity: 0.85;
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+
+.partners img:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* SOCIAL */
+.social {
+    text-align: center;
+    font-size: 2.3em;
+}
+
+.social a {
+    margin: 0 15px;
+    color: #004e92;
+}
+
+/* FOOTER */
+footer {
+    background: #000428;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+</style>
+</head>
+
+<body>
 
 <header>
     <img src="partenaire/NBSM.png" alt="Logo Nacra">
-    <h1>Association Nacra<br>en Baie de Saint-Malo</h1>
+    <h1>Association Nacra<br>en<br>Baie de Saint-Malo</h1>
 </header>
 
+<!-- ACTIVITÉS -->
 <section>
 <h2>Activités</h2>
 <div class="grid">
@@ -42,6 +189,7 @@
 </div>
 </section>
 
+<!-- OBJECTIFS -->
 <section>
 <h2>Objectifs sportifs 2026</h2>
 <div class="grid">
@@ -51,23 +199,146 @@
     </div>
     <div class="card">
         <h3>Objectifs nationaux</h3>
-        <p>Progression technique et régularité en régate.</p>
+        <p>Performance, régularité et progression technique.</p>
     </div>
     <div class="card">
         <h3>Europe & Monde</h3>
-        <p>Découverte du circuit international.</p>
+        <p>Découverte et préparation du circuit international.</p>
     </div>
 </div>
 </section>
 
-<footer>
-    <div class="social">
-        <a href="https://www.instagram.com/nacra15_fra008" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@nacra15_fra008" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://www.youtube.com/@Nacra15FRA008" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="mailto:nbsm@gmail.com"><i class="fas fa-envelope"></i></a>
+<!-- VIDEOS -->
+<section>
+<h2>Vidéos</h2>
+<div class="carousel" id="videoCarousel">
+    <div class="carousel-content">
+        <video src="video/video.mp4" muted></video>
+        <video src="video/video1.mp4" muted></video>
+        <video src="video/video2.mp4" muted></video>
     </div>
-    <p>© 2026 – Association Nacra en Baie de Saint-Malo</p>
+    <button class="prev">‹</button>
+    <button class="next">›</button>
+</div>
+</section>
+
+<!-- PHOTOS -->
+<section>
+<h2>Photos</h2>
+<div class="carousel" id="photoCarousel">
+    <div class="carousel-content">
+        <img src="photo/nacra151.0.jpg">
+        <img src="photo/nacra151.1.jpg">
+        <img src="photo/nacra151.2.jpg">
+        <img src="photo/photo1.jpg">
+        <img src="photo/photo2.jpg">
+        <img src="photo/photo3.jpg">
+    </div>
+    <button class="prev">‹</button>
+    <button class="next">›</button>
+</div>
+</section>
+
+<!-- PARTENAIRES -->
+<section>
+<h2>Nos partenaires</h2>
+<div class="partners">
+    <img src="partenaire/SNBSM.png">
+    <img src="partenaire/YCSL.png">
+    <img src="partenaire/HYDROCONSULT.png">
+</div>
+</section>
+
+<!-- DON -->
+<section>
+<h2>Nous soutenir</h2>
+<div class="card">
+    <p>
+        Soutenir l’Association Nacra en Baie de Saint-Malo, c’est accompagner
+        un projet sportif ambitieux, la formation de jeunes navigateurs
+        et le rayonnement de la voile en Bretagne.
+        <br><br>
+        Chaque don contribue directement aux déplacements, au matériel
+        et à la participation aux compétitions.
+    </p>
+    <a href="https://www.helloasso.com/associations/nacra-en-baie-de-saint-malo"
+       target="_blank"
+       style="background:#FF6A00;color:white;padding:16px 35px;border-radius:14px;text-decoration:none;font-weight:bold;">
+        ❤️ Faire un don
+    </a>
+</div>
+</section>
+
+<!-- CARTE -->
+<section>
+<h2>Zone de navigation</h2>
+<iframe src="https://www.google.com/maps?q=Saint-Malo&output=embed"
+        width="100%" height="350" style="border:0;border-radius:15px;"></iframe>
+</section>
+
+<!-- CONTACT -->
+<section>
+<h2>Contact</h2>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe9UHiA8uA0OTOPDDsn4n9jyHEsHxAtnniwyakwP18JTUMleg/viewform?embedded=true"
+        width="100%" height="900" style="border:0;"></iframe>
+</section>
+
+<!-- RÉSEAUX -->
+<section class="social">
+<a href="https://www.instagram.com/nacra15_fra008" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.tiktok.com/@nacra15_fra008" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.youtube.com/@Nacra15FRA008" target="_blank"><i class="fab fa-youtube"></i></a>
+<a href="mailto:nacra15.fra008@gmail.com"><i class="fas fa-envelope"></i></a>
+</section>
+
+<footer>
+© 2026 – Association Nacra en Baie de Saint-Malo
 </footer>
+
+<script>
+/* VIDEO CAROUSEL */
+function initVideoCarousel(id) {
+    const c = document.getElementById(id);
+    const content = c.querySelector(".carousel-content");
+    const videos = content.querySelectorAll("video");
+    let i = 0;
+
+    function show(n) {
+        content.style.transform = `translateX(-${n * 100}%)`;
+        videos.forEach(v => v.pause());
+        videos[n].play();
+    }
+
+    videos.forEach((v, index) => {
+        v.addEventListener("ended", () => {
+            i = (i + 1) % videos.length;
+            show(i);
+        });
+    });
+
+    c.querySelector(".prev").onclick = () => { i = (i - 1 + videos.length) % videos.length; show(i); };
+    c.querySelector(".next").onclick = () => { i = (i + 1) % videos.length; show(i); };
+
+    show(0);
+}
+
+/* PHOTO CAROUSEL */
+function initPhotoCarousel(id, delay = 3000) {
+    const c = document.getElementById(id);
+    const content = c.querySelector(".carousel-content");
+    const imgs = content.children;
+    let i = 0;
+
+    setInterval(() => {
+        i = (i + 1) % imgs.length;
+        content.style.transform = `translateX(-${i * 100}%)`;
+    }, delay);
+}
+
+initVideoCarousel("videoCarousel");
+initPhotoCarousel("photoCarousel");
+</script>
+
 </body>
 </html>
+
