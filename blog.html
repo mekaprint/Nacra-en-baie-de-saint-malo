@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Blog – Association Nacra</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="blog.html">Blog</a>
+    <a href="navigation.html">Où nous trouver</a>
+    <a href="contact.html">Nous contacter</a>
+</nav>
+
+<section>
+<h2>Blog & Régates</h2>
+<div class="card">
+    <a href="https://nacra15-fra008.blogspot.com/" target="_blank"
+       style="background:#004e92;color:white;padding:15px 30px;border-radius:12px;text-decoration:none;font-weight:bold;">
+        Voir le blog
+    </a>
+</div>
+</section>
+
+<section>
+<h2>Vidéos</h2>
+<div class="carousel" id="videoCarousel">
+    <div class="carousel-content">
+        <video src="video/video1.mp4" muted></video>
+        <video src="video/video2.mp4" muted></video>
+        <video src="video/video3.mp4" muted></video>
+    </div>
+    <button class="prev">‹</button>
+    <button class="next">›</button>
+</div>
+</section>
+
+<section>
+<h2>Photos</h2>
+<div class="carousel" id="photoCarousel">
+    <div class="carousel-content">
+        <img src="photo/nacra151.0.jpg">
+        <img src="photo/nacra151.1.jpg">
+        <img src="photo/nacra151.2.jpg">
+        <img src="photo/nacra151.3.jpg">
+    </div>
+    <button class="prev">‹</button>
+    <button class="next">›</button>
+</div>
+</section>
+
+<footer>
+    <div class="social">
+        <a href="https://www.instagram.com/nacra15_fra008" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@nacra15_fra008" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.youtube.com/@Nacra15FRA008" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="mailto:nbsm@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>© 2026 – Association Nacra en Baie de Saint-Malo</p>
+</footer>
+
+<script>
+function initVideoCarousel(id){
+    const c=document.getElementById(id);
+    const content=c.querySelector(".carousel-content");
+    const videos=content.querySelectorAll("video");
+    let i=0;
+    function show(n){
+        content.style.transform=`translateX(-${n*100}%)`;
+        videos.forEach(v=>v.pause());
+        videos[n].play();
+    }
+    videos.forEach((v,index)=>{v.addEventListener("ended",()=>{i=(i+1)%videos.length;show(i);});});
+    c.querySelector(".prev").onclick=()=>{i=(i-1+videos.length)%videos.length;show(i);}
+    c.querySelector(".next").onclick=()=>{i=(i+1)%videos.length;show(i);}
+    show(0);
+}
+function initPhotoCarousel(id,delay=3000){
+    const c=document.getElementById(id);
+    const content=c.querySelector(".carousel-content");
+    const imgs=content.children;
+    let i=0;
+    setInterval(()=>{i=(i+1)%imgs.length;content.style.transform=`translateX(-${i*100}%)`;},delay);
+}
+initVideoCarousel("videoCarousel");
+initPhotoCarousel("photoCarousel");
+</script>
+</body>
+</html>
