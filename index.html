@@ -155,8 +155,7 @@ footer {
     text-align: center;
     padding: 30px;
 }
-</style>
-</head>
+
 
 <body>
 
@@ -168,43 +167,104 @@ footer {
 <!-- ACTIVITÉS -->
 <section>
 <h2>Activités</h2>
+
 <div class="grid">
-    <div class="card">
+
+    <div class="card expandable">
         <img src="photo/Navigation.jpg">
         <h3>Navigation</h3>
         <p>Entraînements et navigation sportive en baie de Saint-Malo.</p>
+
+        <div class="more-text">
+            <p>
+                Séances régulières axées sur la vitesse, les manœuvres,
+                la stratégie de course et l’adaptation aux conditions
+                spécifiques de la baie de Saint-Malo.
+            </p>
+        </div>
     </div>
-    <div class="card">
+
+    <div class="card expandable">
         <img src="photo/Bapteme.jpg">
         <h3>Découverte</h3>
         <p>Découverte du Nacra 15 et du littoral malouin.</p>
+
+        <div class="more-text">
+            <p>
+                Sorties encadrées pour faire découvrir la navigation
+                en catamaran sportif, la sécurité en mer et
+                le fonctionnement du bateau.
+            </p>
+        </div>
     </div>
-    <div class="card">
+
+    <div class="card expandable">
         <img src="photo/Presentation.jpg">
         <h3>Projet sportif</h3>
         <p>Objectifs sportifs et développement 2026.</p>
+
+        <div class="more-text">
+            <p>
+                Construction d’un projet structuré autour de la
+                performance, de la formation et de la participation
+                aux régates nationales et internationales.
+            </p>
+        </div>
     </div>
+
 </div>
 </section>
+
 
 <!-- OBJECTIFS -->
 <section>
 <h2>Objectifs sportifs 2026</h2>
+
 <div class="grid">
-    <div class="card">
+
+    <div class="card expandable">
         <h3>Championnat de France Espoirs</h3>
         <p>Qualification et participation au championnat national.</p>
+
+        <div class="more-text">
+            <p>
+                Participation aux régates sélectives,
+                préparation technique et physique,
+                avec pour objectif une qualification
+                au Championnat de France Espoirs Nacra 15.
+            </p>
+        </div>
     </div>
-    <div class="card">
+
+    <div class="card expandable">
         <h3>Objectifs nationaux</h3>
-        <p>Performance, régularité et progression technique.</p>
+        <p>Performance et régularité.</p>
+
+        <div class="more-text">
+            <p>
+                Amélioration de la régularité en régate,
+                maîtrise des départs, de la stratégie
+                et gestion des conditions météo variées.
+            </p>
+        </div>
     </div>
-    <div class="card">
+
+    <div class="card expandable">
         <h3>Europe & Monde</h3>
-        <p>Découverte et préparation du circuit international.</p>
+        <p>Découverte du circuit international.</p>
+
+        <div class="more-text">
+            <p>
+                Participation à des compétitions européennes,
+                échanges avec d’autres équipages et montée
+                progressive vers le niveau international.
+            </p>
+        </div>
     </div>
+
 </div>
 </section>
+
 
 <!-- VIDEOS -->
 <section>
@@ -416,10 +476,43 @@ initPhotoCarousel("photoCarousel");
     background: #FF6A00;
     transform: translateY(-2px);
 }
+<style>
+.expandable {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.expandable:hover {
+    transform: translateY(-4px);
+}
+
+.more-text {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    margin-top: 10px;
+}
+
+.expandable.active .more-text {
+    max-height: 300px;
+    opacity: 1;
+}
+</style>
 
 
 </script>
+</style>
+</head>
 
+    <script>
+document.querySelectorAll(".expandable").forEach(card => {
+    card.addEventListener("click", () => {
+        card.classList.toggle("active");
+    });
+});
+</script>
+    
 </body>
 </html>
 
