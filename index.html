@@ -1,21 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-  <!-- Leaflet pour carte interactive -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-<style>
-  /* Style de la carte Nacra */
-  #map {
-    width: 100%;
-    height: 500px;
-    border: 2px solid #004e92;
-    border-radius: 15px;
-    margin-top: 20px;
-  }
-</style>
-
 <head>
 <meta charset="UTF-8">
 <title>Association Nacra en Baie de Saint-Malo</title>
@@ -23,6 +7,10 @@
 
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Leaflet pour la carte -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <style>
 body{
@@ -35,6 +23,7 @@ overflow-x:hidden;
 
 /* HEADER */
 header{
+position: relative; /* ajouté pour le pseudo-after */
 height:70vh;
 background:url("photo/photo1.jpg") center/cover no-repeat;
 display:flex;
@@ -112,6 +101,12 @@ width:100%;
 height:200px;
 object-fit:cover;
 border-radius:12px;
+transition:transform .7s ease, filter .7s ease;
+}
+
+.card:hover img{
+transform:scale(1.08);
+filter:brightness(1.1);
 }
 
 /* CAROUSEL */
@@ -162,11 +157,11 @@ border-radius:10px;
 /* DON - Bouton Faire un don moderne */
 .donate-button {
     display: inline-block;
-    margin: 30px auto 0 auto; /* centré horizontalement */
-    background: #004e92;       /* bleu */
+    margin: 30px auto 0 auto;
+    background: #004e92;
     color: white;
-    padding: 12px 28px;        /* taille confortable */
-    border-radius: 12px;       /* arrondi moderne */
+    padding: 12px 28px;
+    border-radius: 12px;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
@@ -176,14 +171,14 @@ border-radius:10px;
 }
 
 .donate-button:hover {
-    background: #0066c0;        /* bleu plus clair au survol */
-    transform: translateY(-3px) scale(1.05); /* léger effet flottant */
+    background: #0066c0;
+    transform: translateY(-3px) scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 78, 146, 0.5);
 }
 
 /* Cartes presse */
 .press-card {
-  text-align: center; /* centre le contenu et le bouton */
+  text-align: center;
 }
 .press-card img {
   height: 90px;
@@ -226,12 +221,13 @@ color:white;
 text-align:center;
 padding:30px;
 }
+
 /* Scroll fluide */
 html{
 scroll-behavior:smooth;
 }
 
-/* Effet léger marin dans le header (sans modifier le header existant) */
+/* Effet léger marin dans le header */
 header::after{
 content:"";
 position:absolute;
@@ -250,7 +246,7 @@ animation:wave 6s ease-in-out infinite;
 100%{transform:translateY(0);}
 }
 
-/* Animation progressive des cartes (override sans modifier .card existant) */
+/* Animation progressive des cartes */
 section .card{
 opacity:0;
 transform:translateY(30px) scale(.96);
@@ -262,14 +258,13 @@ opacity:1;
 transform:translateY(0) scale(1);
 }
 
-/* Zoom dynamique des images */
-.card img{
-transition:transform .7s ease, filter .7s ease;
-}
-
-.card:hover img{
-transform:scale(1.08);
-filter:brightness(1.1);
+/* Leaflet - carte Nacra */
+#map {
+  width: 100%;
+  height: 500px;
+  border: 2px solid #004e92;
+  border-radius: 15px;
+  margin-top: 20px;
 }
 </style>
 </head>
@@ -281,93 +276,90 @@ filter:brightness(1.1);
 <h1>Association Nacra<br>en<br>Baie de Saint-Malo</h1>
 </header>
 
-  <!--Qui sommes nous-->
+<!-- Qui sommes nous -->
 <section>
 <h2>Qui sommes nous ?</h2>
 <div class="grid">
-
-<div class="card">
-<img src="photo/Raphael.jpg">
-<h3>Raphael Presles</h3>
-<p>J'ai 19 ans, étudiant en Licence 2 de Géographie et Aménagement du Territoire, je cumule 10 années d’expérience dans le monde de la voile. Avec 1 an de pratique en Nacra 15, j'ai déjà participé au National Jeune 2025, aux Championnats du Monde 2025 et aux Superseries 2025.</p>
+  <div class="card">
+    <img src="photo/Raphael.jpg">
+    <h3>Raphael Presles</h3>
+    <p>J'ai 19 ans, étudiant en Licence 2 de Géographie et Aménagement du Territoire, je cumule 10 années d’expérience dans le monde de la voile. Licencié à la SNBSM, j'ai 1 an de pratique en Nacra 15, j'ai déjà participé au National Jeune 2025, aux Championnats du Monde 2025 et aux Superseries 2025.</p>
+  </div>
+  <div class="card">
+    <img src="photo/Léo.jpg">
+    <h3>Léo Jolivet</h3>
+    <p>J'ai 16 ans, lycéen en filière technologique au lycée Les Rimains, je cumule 7 années d'experience dans le monde de la voile. Licencié à la SNBSM, j'ai pratiqué le Hobie Cat 15 et maintenant, le Nacra 15, avec déjà plusieurs traversées de la Manche à mon actif.</p>
+  </div>
 </div>
+</section>
 
-<div class="card">
-<img src="photo/Léo.jpg">
-<h3>Léo Jolivet</h3>
-<p>J'ai 16 ans, lycéen en filière technologique au lycée Les Rimains qui est passionné de voile depuis 7 ans. Licencié à la SNBSM, je pratique le Hobie Cat 15 et le Nacra 15 à Saint-Malo, avec déjà plusieurs traversées de la Manche à mon actif.</p>
-</div>
-<!-- ACTIVITÉS -->
+<!-- Activités -->
 <section>
 <h2>Activités</h2>
 <div class="grid">
-
-<div class="card">
-<img src="photo/Navigation.jpg">
-<h3>Navigation</h3>
-<p>Navigation sportive en baie.</p>
-<p>En plus des régates et des stages pendant les vacances, nous nous entraînons intensivement toute l'année deux fois par semaine. Nous naviguons avec deux autres Nacra 15 et nous sommes coachés par Julien Loyson à Saint-Lunaire.</p>
-</div>
-
-<div class="card">
-<img src="photo/Bapteme.jpg">
-<h3>Nos actions</h3>
-<p>Découvrir le Nacra 15.</p>
-<p>Notre but est de faire découvrir le Nacra 15 aux jeunes en les emmenant sur notre bateau. En parallèle, nous organisons aussi des récoltes de fonds à travers la vente de calendriers, de tableaux et l'organisation de concerts.</p>
-</div>
-
-<div class="card">
-<img src="photo/Presentation.jpg">
-<h3>Projet sportif</h3>
-<p>Saison 2026.</p>
-<p>S'entraîner dur et rechercher des financements pour participer aux championnats de France espoir, d'Europe et du Monde.</p>
-</div>
-
+  <div class="card">
+    <img src="photo/Navigation.jpg">
+    <h3>Navigation</h3>
+    <p>Navigation sportive en baie.</p>
+    <p>En plus des régates et des stages pendant les vacances, nous nous entraînons intensivement toute l'année deux fois par semaine. Nous naviguons avec deux autres Nacra 15 et nous sommes coachés par Julien Loyson à Saint-Lunaire.</p>
+  </div>
+  <div class="card">
+    <img src="photo/Bapteme.jpg">
+    <h3>Nos actions</h3>
+    <p>Découvrir le Nacra 15.</p>
+    <p>Notre but est de faire découvrir le Nacra 15 aux jeunes en les emmenant sur notre bateau. En parallèle, nous organisons aussi des récoltes de fonds à travers la vente de calendriers, de tableaux et l'organisation de concerts.</p>
+  </div>
+  <div class="card">
+    <img src="photo/Presentation.jpg">
+    <h3>Projet sportif</h3>
+    <p>Saison 2026.</p>
+    <p>S'entraîner dur et rechercher des financements pour participer aux championnats de France espoir, d'Europe et du Monde.</p>
+  </div>
 </div>
 </section>
 
-<!-- OBJECTIFS -->
+<!-- Objectifs sportifs 2026 -->
 <section>
 <h2>Objectifs sportifs 2026</h2>
 <div class="grid">
-
-<div class="card">
-<h3>Championnat de France Espoirs</h3>
-<p>Notre objectif principal est de se qualifier aux championnats de France espoirs qui se dérouleront à Martigues en août 2026. Afin d'atteindre cet objectif, nous participerons à 4 régates qualificatives au printemps. (ligues à Quiberon et Lorient, l'eurocat à Carnac ainsi que la coupe de Bretagne des clubs à Lorient). La flotte bretonne comporte 20 bateaux, lors du championnat de France, on décomptera une flotte de 50 Nacra 15.</p>
-</div>
-
-<div class="card">
-<h3>Nationaux</h3>
-<p>Les nationaux sont un excellent tremplin pour apprendre à naviguer dans des grandes flottes comme aux championnats internationaux et aux championnats de France. Lors des nationaux, les pays limitrophes de la France viennent pour se tester. Nous allons participer à L'european Superseries au Havre mi-mai et à l'Eurocat de Carnac début mai qui est aussi qualificatif aux championnats de France espoirs. Nous considérons ces régates comme un moyen de s'entraîner à naviguer dans des grandes flottes notamment sur les départs. Les flottent comportent en général entre 40 et 70 Nacra 15.</p>
-</div>
-
-<div class="card">
-<h3>Europe & Monde</h3>
-<p>Cette année les championnats d'Europe et du Monde se déroulent respectivement à Barcelone en octobre 2026 et à Plymouth cet été. Nous projetons d'y aller non seulement pour découvrir le circuit international mais aussi pour performer et atteindre le rond or (la première moitié de classement), ou un podium sur le rond argent. Ce sont les régates qui sont les plus coûteuses pour les inscriptions et déplacements. En 2026, il se pourrait que la flotte Nacra 15 sur ces régates dépasse les 100 Nacra 15.</p>
-</div>
-
-</div>
-</section>
-
-<!-- VIDEOS -->
-<section>
-  <h2>Vidéos</h2>
-  <div class="carousel" id="videoCarousel">
-    <div class="carousel-content">
-      <video src="video/nacra15_fra0081.1.mp4" controls></video>
-      <video src="video/nacra15_fra0081.2.mp4" controls></video>
-      <video src="video/nacra15_fra0081.3.mp4" controls></video>
-      <video src="video/nacra15_fra0081.4.mp4" controls></video>
-      <video src="video/nacra15_fra0081.5.mp4" controls></video>
-    </div>
-    <button class="prev">‹</button>
-    <button class="next">›</button>
+  <div class="card">
+    <h3>Championnat de France Espoirs</h3>
+    <p>Notre objectif principal est de se qualifier aux championnats de France espoirs qui se dérouleront à Martigues en août 2026...</p>
   </div>
+  <div class="card">
+    <h3>Nationaux</h3>
+    <p>Les nationaux sont un excellent tremplin pour apprendre à naviguer dans des grandes flottes...</p>
+  </div>
+  <div class="card">
+    <h3>Europe & Monde</h3>
+    <p>Cette année les championnats d'Europe et du Monde se déroulent respectivement à Barcelone en octobre 2026 et à Plymouth cet été...</p>
+  </div>
+</div>
 </section>
 
+<!-- Carte Nacra -->
+<section>
+<h2>Lieu de navigation Nacra</h2>
+<div id="map"></div>
+</section>
 
+<!-- Vidéos -->
+<section>
+<h2>Vidéos</h2>
+<div class="carousel" id="videoCarousel">
+  <div class="carousel-content">
+    <video src="video/nacra15_fra0081.1.mp4" controls></video>
+    <video src="video/nacra15_fra0081.2.mp4" controls></video>
+    <video src="video/nacra15_fra0081.3.mp4" controls></video>
+    <video src="video/nacra15_fra0081.4.mp4" controls></video>
+    <video src="video/nacra15_fra0081.5.mp4" controls></video>
+  </div>
+  <button class="prev">‹</button>
+  <button class="next">›</button>
+</div>
+</section>
 
-<!-- PHOTOS -->
+<!-- Photos -->
 <section>
 <h2>Photos</h2>
 <div class="carousel" id="photoCarousel">
@@ -382,103 +374,41 @@ filter:brightness(1.1);
 </div>
 </section>
 
-<!-- PRESSE -->
+<!-- Presse -->
 <section>
 <h2>Ils parlent de nous</h2>
-
 <div class="grid">
-
-  <!-- Exemple Média 1 -->
   <div class="card press-card">
     <img src="presse/tvrenne.jpeg" alt="TV Rennes">
     <h3>TV-Rennes</h3>
     <p>Reportage sur notre projet sportif et la navigation en baie.</p>
-    <a class="press-link"
-       href="https://www.tvr.bzh/replay/52a4935-c-l-invite-05-12-2025"
-       target="_blank"
-       rel="noopener">
-        Voir l’interview
-    </a>
+    <a class="press-link" href="https://www.tvr.bzh/replay/52a4935-c-l-invite-05-12-2025" target="_blank" rel="noopener">Voir l’interview</a>
   </div>
-
-  <!-- Exemple Média 2 -->
   <div class="card press-card">
     <img src="presse/lesechos.jpeg" alt="Les Echos">
     <h3>Les Echos</h3>
     <p>Présentation de nos actions et projets sportifs pour la jeunesse.</p>
-    <a class="press-link"
-       href="https://www.lesechos.fr/pme-regions/bretagne/hydroconsult-confirme-son-ancrage-local-grace-au-mecenat-2195417"
-       target="_blank"
-       rel="noopener">
-        Voir l’article
-    </a>
+    <a class="press-link" href="https://www.lesechos.fr/pme-regions/bretagne/hydroconsult-confirme-son-ancrage-local-grace-au-mecenat-2195417" target="_blank" rel="noopener">Voir l’article</a>
   </div>
-
-  <!-- Exemple Média 3 -->
   <div class="card press-card">
     <img src="presse/courseaularge.jpeg" alt="Course au Large">
     <h3>Course au Large</h3>
     <p>Article sur nos jeunes navigateurs et leur participation aux régates.</p>
-    <a class="press-link"
-       href="https://www.courseaularge.com/nacra15-hydroconsult-soutient-deux-jeunes-navigateurs-malouins-en-nacra-15.html"
-       target="_blank"
-       rel="noopener">
-        Voir l’article
-    </a>
+    <a class="press-link" href="https://www.courseaularge.com/nacra15-hydroconsult-soutient-deux-jeunes-navigateurs-malouins-en-nacra-15.html" target="_blank" rel="noopener">Voir l’article</a>
   </div>
-
 </div>
 </section>
 
-<style>
-/* Style spécifique aux cartes presse */
-.press-card {
-    text-align: center; /* centre le contenu et le bouton */
-}
-.press-card img {
-    height: 90px;
-    object-fit: contain;
-    margin-bottom: 15px;
-}
-
-.press-link {
-    display: inline-block;
-    margin-top: 15px;
-    color: white;
-    background: #004e92;
-    padding: 10px 18px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
-
-.press-link:hover {
-    background: #FF6A00;
-}
-</style>
-
+<!-- Don -->
 <section>
-<h2>Lieu de navigation Nacra</h2>
-<div id="map"></div>
+<h2>💙 Soutenir l’association</h2>
+<div class="card" style="text-align: center;">
+<p>En soutenant l’Association Nacra en Baie de Saint-Malo, vous contribuez directement au développement d’un projet sportif ambitieux.</p>
+<a href="https://www.helloasso.com/associations/nacra-en-baie-de-saint-malo" target="_blank" class="donate-button">❤️ Faire un don via HelloAsso</a>
+</div>
 </section>
 
-
-<!-- DON -->
-<section>
-  <h2>💙 Soutenir l’association</h2>
-  <div class="card" style="text-align: center;"> <!-- centre le bouton -->
-    <p>En soutenant l’Association Nacra en Baie de Saint-Malo, vous contribuez directement au développement d’un projet sportif ambitieux.</p>
-    <a href="https://www.helloasso.com/associations/nacra-en-baie-de-saint-malo"
-       target="_blank"
-       class="donate-button">
-       ❤️ Faire un don via HelloAsso
-    </a>
-  </div>
-</section>
-
-
-<!-- CONTACT -->
+<!-- Contact -->
 <section>
 <h2>Nous contacter</h2>
 <div class="card">
@@ -487,8 +417,7 @@ width="100%" height="800" style="border:0;border-radius:15px;"></iframe>
 </div>
 </section>
 
-<!-- PARTENAIRES -->
-<!-- PARTENAIRES -->
+<!-- Partenaires -->
 <section>
 <h2>Partenaires</h2>
 <div class="partners">
@@ -498,7 +427,7 @@ width="100%" height="800" style="border:0;border-radius:15px;"></iframe>
 </div>
 </section>
 
-<!-- RÉSEAUX -->
+<!-- Réseaux -->
 <section class="social">
 <a href="https://www.instagram.com/nacra15_fra008"><i class="fab fa-instagram"></i></a>
 <a href="https://www.facebook.com/61582882088626/"><i class="fab fa-facebook"></i></a>
@@ -513,40 +442,11 @@ width="100%" height="800" style="border:0;border-radius:15px;"></iframe>
 </footer>
 
 <script>
-<script>
-  // Initialisation carte Leaflet centrée sur la baie de Saint-Malo
-  var map = L.map('map').setView([48.653, -2.024], 13);
-
-  // Tuiles OpenStreetMap
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
-
-  // Repère point Nacra
-  L.marker([48.653, -2.024]).addTo(map)
-    .bindPopup('<b>Point Nacra</b><br>Baie de Saint-Malo')
-    .openPopup();
-
-  // Zone approximative de navigation
-  var zone = L.polygon([
-    [48.658, -2.030],
-    [48.658, -2.018],
-    [48.648, -2.018],
-    [48.648, -2.030]
-  ], {color: 'blue', fillOpacity: 0.2}).addTo(map)
-    .bindPopup('Zone Nacra');
-
-/* ============================= */
-/* ANIMATION PROGRESSIVE DES SECTIONS ET CARTES */
-/* ============================= */
-
 /* IntersectionObserver pour faire apparaître les sections */
 const sectionObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if(entry.isIntersecting) {
             entry.target.classList.add("visible");
-
-            /* Animation des cartes à l'intérieur de la section */
             const cards = entry.target.querySelectorAll(".card");
             cards.forEach((card, index) => {
                 setTimeout(() => {
@@ -559,10 +459,7 @@ const sectionObserver = new IntersectionObserver(entries => {
 
 document.querySelectorAll("section").forEach(sec => sectionObserver.observe(sec));
 
-/* ============================= */
-/* CAROUSEL (manuel + auto) */
-/* ============================= */
-
+/* Carrousels */
 function initCarousel(id){
     const c = document.getElementById(id);
     if(!c) return;
@@ -575,29 +472,37 @@ function initCarousel(id){
         track.style.transform = "translateX(-" + i*100 + "%)";
     }
 
-    /* Boutons manuel */
     const nextBtn = c.querySelector(".next");
     const prevBtn = c.querySelector(".prev");
     nextBtn.onclick = () => { i = (i+1) % items.length; update(); };
     prevBtn.onclick = () => { i = (i-1 + items.length) % items.length; update(); };
 
-    /* Auto défilement */
-    let auto = setInterval(() => {
-        i = (i+1) % items.length;
-        update();
-    }, 4000);
-
-    /* Pause au survol */
+    let auto = setInterval(() => { i = (i+1) % items.length; update(); }, 4000);
     c.addEventListener("mouseenter", () => clearInterval(auto));
     c.addEventListener("mouseleave", () => {
-        auto = setInterval(() => {
-            i = (i+1) % items.length;
-            update();
-        }, 4000);
+        auto = setInterval(() => { i = (i+1) % items.length; update(); }, 4000);
     });
 }
 
-/* Initialisation des carrousels */
 initCarousel("videoCarousel");
 initCarousel("photoCarousel");
+
+/* Leaflet - carte Nacra */
+var map = L.map('map').setView([48.653, -2.024], 13);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+L.marker([48.653, -2.024]).addTo(map)
+  .bindPopup('<b>Point Nacra</b><br>Baie de Saint-Malo')
+  .openPopup();
+
+var zone = L.polygon([
+    [48.658, -2.030],
+    [48.658, -2.018],
+    [48.648, -2.018],
+    [48.648, -2.030]
+], {color: 'blue', fillOpacity: 0.2}).addTo(map);
 </script>
+</body>
+</html>
