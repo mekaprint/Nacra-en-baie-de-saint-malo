@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-/* ===== BASE ===== */
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
@@ -17,7 +16,7 @@ color:#222;
 overflow-x:hidden;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
 height:70vh;
 background:url("photo/photo1.jpg") center/cover no-repeat;
@@ -27,36 +26,36 @@ justify-content:center;
 align-items:center;
 text-align:center;
 color:white;
-animation:headerZoom 1.5s ease;
+animation:zoom 1.5s ease;
 }
 
-@keyframes headerZoom{
-from{transform:scale(1.05);filter:brightness(0.7);}
-to{transform:scale(1);filter:brightness(1);}
+@keyframes zoom{
+from{transform:scale(1.05);filter:brightness(.7);}
+to{transform:scale(1);}
 }
 
 header img{
 width:260px;
-background:rgba(255,255,255,0.9);
+background:white;
 padding:10px;
 border-radius:50%;
 margin-bottom:20px;
 }
 
 header h1{
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,.6);
 padding:20px 30px;
 border-radius:15px;
 }
 
-/* ===== SECTIONS ===== */
+/* SECTIONS */
 section{
 max-width:1100px;
 margin:auto;
 padding:60px 20px;
 opacity:0;
 transform:translateY(40px);
-transition:all .8s ease;
+transition:.8s;
 }
 
 section.visible{
@@ -70,26 +69,25 @@ border-left:5px solid #004e92;
 padding-left:15px;
 }
 
-/* ===== GRID ===== */
+/* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
 }
 
-/* ===== CARDS ===== */
+/* CARDS */
 .card{
 background:white;
 padding:25px;
 border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,0.1);
-text-align:center;
-transition:.35s;
+box-shadow:0 8px 20px rgba(0,0,0,.1);
+transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,.15);
 }
 
 .card img{
@@ -99,7 +97,7 @@ object-fit:cover;
 border-radius:12px;
 }
 
-/* ===== CAROUSEL ===== */
+/* CAROUSEL */
 .carousel{
 position:relative;
 overflow:hidden;
@@ -123,7 +121,7 @@ object-fit:cover;
 position:absolute;
 top:50%;
 transform:translateY(-50%);
-background:rgba(0,78,146,0.85);
+background:#004e92;
 color:white;
 border:none;
 font-size:2em;
@@ -135,11 +133,11 @@ border-radius:10px;
 .prev{left:10px;}
 .next{right:10px;}
 
-/* ===== DON BUTTON ===== */
+/* DON */
 .don-btn{
 display:inline-block;
-margin-top:30px;
-padding:16px 28px;
+margin-top:25px;
+padding:16px 30px;
 background:linear-gradient(135deg,#0077ff,#00c6ff);
 color:white;
 border-radius:40px;
@@ -150,10 +148,9 @@ transition:.3s;
 
 .don-btn:hover{
 transform:translateY(-4px);
-box-shadow:0 15px 35px rgba(0,119,255,.5);
 }
 
-/* ===== PARTENAIRES ===== */
+/* PARTENAIRES */
 .partners{
 display:flex;
 flex-wrap:wrap;
@@ -161,28 +158,13 @@ justify-content:center;
 gap:30px;
 }
 
-.partners img{
-max-height:70px;
-}
+.partners img{max-height:70px;}
 
-/* ===== SOCIAL ===== */
-.social{
-text-align:center;
-font-size:2.2em;
-}
+/* SOCIAL */
+.social{text-align:center;font-size:2.2em;}
+.social a{margin:0 15px;color:#004e92;transition:.3s;}
+.social a:hover{transform:scale(1.25);color:#00aaff;}
 
-.social a{
-margin:0 15px;
-color:#004e92;
-transition:.3s;
-}
-
-.social a:hover{
-transform:scale(1.25);
-color:#00aaff;
-}
-
-/* ===== FOOTER ===== */
 footer{
 background:#000428;
 color:white;
@@ -208,7 +190,7 @@ padding:30px;
 <img src="photo/Navigation.jpg">
 <h3>Navigation</h3>
 <p>Navigation sportive en baie.</p>
-<p>En plus des régates et des stages pendant les vacances, nous nous entraînons intensivement toute l'année deux fois par semaine. Nous naviguons avec deux autres Nacra 15 et nous sommes coachés par Julien Loyson à Saint-Lunaire</p>
+<p>En plus des régates et des stages pendant les vacances, nous nous entraînons intensivement toute l'année deux fois par semaine...</p>
 </div>
 
 <div class="card">
@@ -228,6 +210,29 @@ padding:30px;
 </div>
 </section>
 
+<!-- OBJECTIFS -->
+<section>
+<h2>Objectifs sportifs 2026</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Championnat de France Espoirs</h3>
+<p>Notre objectif principal est de se qualifier aux championnats de France espoirs...</p>
+</div>
+
+<div class="card">
+<h3>Nationaux</h3>
+<p>Les nationaux sont un excellent tremplin pour apprendre à naviguer...</p>
+</div>
+
+<div class="card">
+<h3>Europe & Monde</h3>
+<p>Cette année les championnats d'Europe et du Monde se déroulent respectivement à Barcelone...</p>
+</div>
+
+</div>
+</section>
+
 <!-- VIDEOS -->
 <section>
 <h2>Vidéos</h2>
@@ -242,17 +247,38 @@ padding:30px;
 </div>
 </section>
 
+<!-- PHOTOS -->
+<section>
+<h2>Photos</h2>
+<div class="carousel" id="photoCarousel">
+<div class="carousel-content">
+<img src="photo/photo1.jpg">
+<img src="photo/photo2.jpg">
+<img src="photo/nacra151.0.jpg">
+<img src="photo/nacra151.1.jpg">
+</div>
+<button class="prev">‹</button>
+<button class="next">›</button>
+</div>
+</section>
+
 <!-- DON -->
 <section>
 <h2>💙 Soutenir l’association</h2>
 <div class="card">
 <p>En soutenant l’Association Nacra en Baie de Saint-Malo, vous contribuez directement au développement d’un projet sportif ambitieux.</p>
-
-<a href="https://www.helloasso.com/associations/nacra-en-baie-de-saint-malo"
-target="_blank"
-class="don-btn">
+<a href="https://www.helloasso.com/associations/nacra-en-baie-de-saint-malo" target="_blank" class="don-btn">
 Faire un don via HelloAsso
 </a>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section>
+<h2>Nous contacter</h2>
+<div class="card">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe9UHiA8uA0OTOPDDsn4n9jyHEsHxAtnniwyakwP18JTUMleg/viewform?embedded=true"
+width="100%" height="800" style="border:0;border-radius:15px;"></iframe>
 </div>
 </section>
 
@@ -280,36 +306,25 @@ Faire un don via HelloAsso
 
 <script>
 /* Animation scroll */
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(e=>{
-if(e.isIntersecting){e.target.classList.add("visible");}
+const obs=new IntersectionObserver(e=>{
+e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("visible");});
 });
-},{threshold:.15});
-document.querySelectorAll("section").forEach(s=>observer.observe(s));
+document.querySelectorAll("section").forEach(s=>obs.observe(s));
 
 /* Carousel */
-function initCarousel(id){
+function init(id){
 const c=document.getElementById(id);
-const content=c.querySelector(".carousel-content");
-const items=content.children;
+const track=c.querySelector(".carousel-content");
+const items=track.children;
 let i=0;
 
-function update(){
-content.style.transform="translateX(-"+i*100+"%)";
+function update(){track.style.transform="translateX(-"+i*100+"%)";}
+
+c.querySelector(".next").onclick=()=>{i=(i+1)%items.length;update();};
+c.querySelector(".prev").onclick=()=>{i=(i-1+items.length)%items.length;update();};
 }
-
-c.querySelector(".next").onclick=()=>{
-i=(i+1)%items.length;
-update();
-};
-
-c.querySelector(".prev").onclick=()=>{
-i=(i-1+items.length)%items.length;
-update();
-};
-}
-
-initCarousel("videoCarousel");
+init("videoCarousel");
+init("photoCarousel");
 </script>
 
 </body>
