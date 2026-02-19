@@ -115,6 +115,7 @@ width:100%;
 flex-shrink:0;
 aspect-ratio:16/9;
 object-fit:cover;
+border-radius:12px;
 }
 
 .carousel button{
@@ -273,18 +274,17 @@ padding:30px;
 <!-- VIDEOS -->
 <section>
   <h2>Vidéos</h2>
-  <div class="grid">
-    <div class="video-container">
+  <div class="carousel" id="videoCarousel">
+    <div class="carousel-content">
       <video src="video/nacra15_fra0081.0.mp4" controls></video>
-    </div>
-    <div class="video-container">
       <video src="video/nacra15_fra0081.1.mp4" controls></video>
-    </div>
-    <div class="video-container">
       <video src="video/nacra15_fra0081.2.mp4" controls></video>
     </div>
+    <button class="prev">‹</button>
+    <button class="next">›</button>
   </div>
 </section>
+
 
 
 <!-- PHOTOS -->
