@@ -134,17 +134,24 @@ border-radius:10px;
 .next{right:10px;}
 
 /* DON */
-.don-btn{
-display:inline-block;
-margin-top:25px;
-padding:16px 30px;
-background:linear-gradient(135deg,#0077ff,#00c6ff);
-color:white;
-border-radius:40px;
-text-decoration:none;
-font-weight:bold;
-transition:.3s;
+/* Bouton Faire un don */
+.donate-button {
+    display: inline-block;
+    margin-top: 20px;       /* un peu d’espace au-dessus */
+    background: #FF6A00;
+    color: white;
+    padding: 10px 20px;     /* moins grand que 16px 32px */
+    border-radius: 8px;     /* moins arrondi */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;         /* taille plus légère */
+    transition: background 0.3s ease;
 }
+
+.donate-button:hover {
+    background: #e65c00;    /* léger effet au survol */
+}
+
 
 .don-btn:hover{
 transform:translateY(-4px);
