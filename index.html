@@ -133,8 +133,15 @@ border-radius:10px;
 .prev{left:10px;}
 .next{right:10px;}
 
-/* DON */
-/* Bouton Faire un don moderne */
+/* Vidéos locales */
+.video-container video {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* DON - Bouton Faire un don moderne */
 .donate-button {
     display: inline-block;
     margin: 30px auto 0 auto; /* centré horizontalement */
@@ -154,6 +161,30 @@ border-radius:10px;
     background: #0066c0;        /* bleu plus clair au survol */
     transform: translateY(-3px) scale(1.05); /* léger effet flottant */
     box-shadow: 0 8px 20px rgba(0, 78, 146, 0.5);
+}
+
+/* Cartes presse */
+.press-card {
+  text-align: center; /* centre le contenu et le bouton */
+}
+.press-card img {
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+.press-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: white;
+  background: #004e92;
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.press-link:hover {
+  background: #FF6A00;
 }
 
 /* PARTENAIRES */
