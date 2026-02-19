@@ -209,6 +209,51 @@ color:white;
 text-align:center;
 padding:30px;
 }
+/* Scroll fluide */
+html{
+scroll-behavior:smooth;
+}
+
+/* Effet léger marin dans le header (sans modifier le header existant) */
+header::after{
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+width:100%;
+height:120px;
+background:linear-gradient(to top,#f4f6f8,transparent);
+pointer-events:none;
+animation:wave 6s ease-in-out infinite;
+}
+
+@keyframes wave{
+0%{transform:translateY(0);}
+50%{transform:translateY(18px);}
+100%{transform:translateY(0);}
+}
+
+/* Animation progressive des cartes (override sans modifier .card existant) */
+section .card{
+opacity:0;
+transform:translateY(30px) scale(.96);
+transition:transform .6s ease, opacity .6s ease, box-shadow .3s ease;
+}
+
+section .card.show{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+
+/* Zoom dynamique des images */
+.card img{
+transition:transform .7s ease, filter .7s ease;
+}
+
+.card:hover img{
+transform:scale(1.08);
+filter:brightness(1.1);
+}
 </style>
 </head>
 
@@ -450,8 +495,69 @@ c.querySelector(".prev").onclick=()=>{i=(i-1+items.length)%items.length;update()
 }
 init("videoCarousel");
 init("photoCarousel");
+
+<script>
+/* ============================= */
+/* ANIMATION PROGRESSIVE DES CARDS */
+/* ============================= */
+
+/* On observe les sections déjà utilisées par ton code */
+const staggerObserver = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+
+/* On anime les cartes une par une */
+const cards = entry.target.querySelectorAll(".card");
+
+cards.forEach((card,index)=>{
+setTimeout(()=>{
+card.classList.add("show");
+},120 * index);
+});
+
+}
+});
+},{threshold:0.25});
+
+document.querySelectorAll("section").forEach(sec=>{
+staggerObserver.observe(sec);
+});
+/* ============================= */
+/* CAROUSEL AUTO (sans modifier ta fonction init) */
+/* ============================= */
+
+function autoPlayCarousel(id,delay=4000){
+const c=document.getElementById(id);
+if(!c)return;
+
+const track=c.querySelector(".carousel-content");
+const items=track.children;
+let i=0;
+
+function update(){
+track.style.transform="translateX(-"+i*100+"%)";
+}
+
+/* Auto défilement */
+let auto=setInterval(()=>{
+i=(i+1)%items.length;
+update();
+},delay);
+
+/* Pause si interaction */
+c.addEventListener("mouseenter",()=>clearInterval(auto));
+c.addEventListener("mouseleave",()=>{
+auto=setInterval(()=>{
+i=(i+1)%items.length;
+update();
+},delay);
+});
+}
+
+/* On active sans toucher à ton code existant */
+autoPlayCarousel("videoCarousel");
+autoPlayCarousel("photoCarousel");
 </script>
 
 </body>
 </html>
-
