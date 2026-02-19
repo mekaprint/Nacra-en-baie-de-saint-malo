@@ -134,27 +134,26 @@ border-radius:10px;
 .next{right:10px;}
 
 /* DON */
-/* Bouton Faire un don */
+/* Bouton Faire un don moderne */
 .donate-button {
     display: inline-block;
-    margin-top: 20px;       /* un peu d’espace au-dessus */
-    background: #FF6A00;
+    margin: 30px auto 0 auto; /* centré horizontalement */
+    background: #004e92;       /* bleu */
     color: white;
-    padding: 10px 20px;     /* moins grand que 16px 32px */
-    border-radius: 8px;     /* moins arrondi */
+    padding: 12px 28px;        /* taille confortable */
+    border-radius: 12px;       /* arrondi moderne */
     text-decoration: none;
     font-weight: bold;
-    font-size: 1em;         /* taille plus légère */
-    transition: background 0.3s ease;
+    font-size: 1.1em;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 78, 146, 0.4);
 }
 
 .donate-button:hover {
-    background: #e65c00;    /* léger effet au survol */
-}
-
-
-.don-btn:hover{
-transform:translateY(-4px);
+    background: #0066c0;        /* bleu plus clair au survol */
+    transform: translateY(-3px) scale(1.05); /* léger effet flottant */
+    box-shadow: 0 8px 20px rgba(0, 78, 146, 0.5);
 }
 
 /* PARTENAIRES */
@@ -348,14 +347,17 @@ padding:30px;
 
 <!-- DON -->
 <section>
-<h2>💙 Soutenir l’association</h2>
-<div class="card">
-<p>En soutenant l’Association Nacra en Baie de Saint-Malo, vous contribuez directement au développement d’un projet sportif ambitieux.</p>
-<a href="https://www.helloasso.com/associations/nacra-en-baie-de-saint-malo" target="_blank" class="don-btn">
-Faire un don via HelloAsso
-</a>
-</div>
+  <h2>💙 Soutenir l’association</h2>
+  <div class="card" style="text-align: center;"> <!-- centre le bouton -->
+    <p>En soutenant l’Association Nacra en Baie de Saint-Malo, vous contribuez directement au développement d’un projet sportif ambitieux.</p>
+    <a href="https://www.helloasso.com/associations/nacra-en-baie-de-saint-malo"
+       target="_blank"
+       class="donate-button">
+       ❤️ Faire un don via HelloAsso
+    </a>
+  </div>
 </section>
+
 
 <!-- CONTACT -->
 <section>
