@@ -1,5 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
+
+  <!-- Leaflet pour carte interactive -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<style>
+  /* Style de la carte Nacra */
+  #map {
+    width: 100%;
+    height: 500px;
+    border: 2px solid #004e92;
+    border-radius: 15px;
+    margin-top: 20px;
+  }
+</style>
+
 <head>
 <meta charset="UTF-8">
 <title>Association Nacra en Baie de Saint-Malo</title>
@@ -442,6 +458,11 @@ filter:brightness(1.1);
 }
 </style>
 
+<section>
+<h2>Lieu de navigation Nacra</h2>
+<div id="map"></div>
+</section>
+
 
 <!-- DON -->
 <section>
@@ -492,6 +513,29 @@ width="100%" height="800" style="border:0;border-radius:15px;"></iframe>
 </footer>
 
 <script>
+<script>
+  // Initialisation carte Leaflet centrée sur la baie de Saint-Malo
+  var map = L.map('map').setView([48.653, -2.024], 13);
+
+  // Tuiles OpenStreetMap
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // Repère point Nacra
+  L.marker([48.653, -2.024]).addTo(map)
+    .bindPopup('<b>Point Nacra</b><br>Baie de Saint-Malo')
+    .openPopup();
+
+  // Zone approximative de navigation
+  var zone = L.polygon([
+    [48.658, -2.030],
+    [48.658, -2.018],
+    [48.648, -2.018],
+    [48.648, -2.030]
+  ], {color: 'blue', fillOpacity: 0.2}).addTo(map)
+    .bindPopup('Zone Nacra');
+
 /* ============================= */
 /* ANIMATION PROGRESSIVE DES SECTIONS ET CARTES */
 /* ============================= */
