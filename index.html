@@ -95,15 +95,28 @@ transition:.3s;
 transform:translateY(-8px);
 box-shadow:0 20px 40px rgba(0,0,0,.15);
 }
-
 .card img{
 width:100%;
-height:auto;              /* laisse la vraie hauteur */
-max-height:320px;         /* limite pour garder un design propre */
-object-fit:contain;       /* affiche toute l'image */
-background:#f4f6f8;       /* fond propre si l'image n'est pas au même format */
+height:200px;
+object-fit:cover;
 border-radius:12px;
 transition:transform .7s ease, filter .7s ease;
+}
+
+/* ===== Section Qui sommes nous uniquement ===== */
+
+.team .card{
+text-align:center;
+}
+
+.team .card img{
+width:100%;
+height:auto;           /* garde la vraie proportion */
+max-height:340px;      /* limite visuelle propre */
+object-fit:contain;    /* affiche toute la photo */
+background:#f4f6f8;
+padding:8px;
+border-radius:12px;
 }
 
 
